@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { useState } from "react";
 import axios from "axios";
@@ -28,7 +27,7 @@ export default function CreateTodo({
 
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/api/v1/todos`,
+        `/api/todo`,
         { title, description, status },
         {
           headers: {
@@ -90,13 +89,17 @@ export default function CreateTodo({
             <button
               type="button"
               onClick={onClose}
-              className="mr-4 px-4 py-2 bg-gray-500 text-white rounded"
+              className="mr-4 text-sm px-8 py-2 rounded-full bg-gray-500 text-white"
             >
               Cancel
             </button>
 
-            <button type="submit" disabled={loading} className="text-sm px-8 py-2 rounded-full bg-red-500 text-white ">
-              {loading ? "Creating..." : "Craete"}
+            <button
+              type="submit"
+              disabled={loading}
+              className="text-sm px-8 py-2 rounded-full bg-red-500 text-white "
+            >
+              {loading ? "Creating..." : "Create"}
             </button>
           </div>
         </form>

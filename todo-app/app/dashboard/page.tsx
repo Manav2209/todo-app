@@ -35,7 +35,7 @@ function useTodos() {
       }
 
       try {
-        const response = await axios.get(`${BACKEND_URL}/api/v1/todos`, {
+        const response = await axios.get('api/todo', {
           headers: {
             Authorization: token,
           },
@@ -87,7 +87,7 @@ export default function TodoPage() {
 
   const handleDeleteTodo = async (todoId: string) => {
     try {
-      await axios.delete(`${BACKEND_URL}/api/v1/todos/${todoId}`, {
+      await axios.delete(`api/todo/${todoId}`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },

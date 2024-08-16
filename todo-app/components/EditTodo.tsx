@@ -42,7 +42,7 @@ export default function EditTodo({ isOpen, onClose, todo, onTodoUpdated }: EditT
 
     try {
       const response = await axios.put(
-        `${BACKEND_URL}/api/v1/todos/${todo.id}`,
+        `/api/todo/${todo.id}`,
         { title, description, status },
         {
           headers: {
